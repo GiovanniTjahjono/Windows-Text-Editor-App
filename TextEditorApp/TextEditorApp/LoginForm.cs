@@ -39,7 +39,7 @@ namespace TextEditorApp
                 string[] result = auth.Login(username, password);
                 if (result[0].ToUpper() == "TRUE")
                 {
-                    MainForm mainForm = new MainForm(result[1], result[2]);
+                    Idea mainForm = new Idea(result[1], result[2]);
                     mainForm.Show();
                     this.Hide();
                 }

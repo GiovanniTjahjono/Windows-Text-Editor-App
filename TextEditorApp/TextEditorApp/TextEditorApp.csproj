@@ -7,7 +7,7 @@
     <ProjectGuid>{2497F06A-5CD2-400C-AC7D-11A10B67B2D8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>TextEditorApp</RootNamespace>
-    <AssemblyName>TextEditorApp</AssemblyName>
+    <AssemblyName>Idea Text Editor</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>idea-01.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -102,6 +108,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icons\Idea Logo.jpg" />
+    <Content Include="idea-01.ico" />
     <Content Include="User Pool Data\login.txt" />
     <None Include="Icons\icons8-help-48.png" />
     <None Include="Icons\underline.png" />

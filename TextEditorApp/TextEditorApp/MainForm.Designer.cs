@@ -1,6 +1,6 @@
 ﻿namespace TextEditorApp
 {
-    partial class MainForm
+    partial class Idea
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Idea));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmItemNewFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,6 +62,7 @@
             this.tsBtnCopy = new System.Windows.Forms.ToolStripButton();
             this.tsBtnPaste = new System.Windows.Forms.ToolStripButton();
             this.rtbMainEditor = new System.Windows.Forms.RichTextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -300,6 +303,7 @@
             this.toolStripButton8.Name = "toolStripButton8";
             this.toolStripButton8.Size = new System.Drawing.Size(29, 25);
             this.toolStripButton8.Text = "toolStripButton8";
+            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
             // tsLblUsername
             // 
@@ -363,7 +367,7 @@
             this.rtbMainEditor.TabIndex = 3;
             this.rtbMainEditor.Text = "";
             // 
-            // MainForm
+            // Idea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -372,9 +376,10 @@
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Name = "Idea";
+            this.Text = "Idea";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -420,5 +425,6 @@
         private System.Windows.Forms.ToolStripButton tsBtnCopy;
         private System.Windows.Forms.ToolStripButton tsBtnPaste;
         private System.Windows.Forms.RichTextBox rtbMainEditor;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

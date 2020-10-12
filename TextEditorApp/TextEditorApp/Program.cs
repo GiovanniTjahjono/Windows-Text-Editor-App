@@ -16,7 +16,8 @@ namespace TextEditorApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm("EDIT", "Giovanni"));
+            //Application.Run(new MainForm("EDIT", "Giovanni"));
+            Application.Run(new LoginForm());
         }
     }
 }

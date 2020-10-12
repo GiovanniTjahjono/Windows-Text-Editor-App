@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace TextEditorApp
 {
-    public partial class MainForm : Form
+    public partial class Idea : Form
     {
         private Operation operation;
-        public MainForm(String userType, String username)
+        public Idea(String userType, String username)
         {
             InitializeComponent();
             operation = new Operation(rtbMainEditor);
@@ -156,6 +156,11 @@ namespace TextEditorApp
         private void tsBtnNewFile_Click(object sender, EventArgs e)
         {
             operation.NewFile();
+        }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            // Tool Tip
         }
     }
 }

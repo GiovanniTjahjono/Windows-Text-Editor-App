@@ -1,12 +1,12 @@
-C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\bin\Debug\TextEditorApp.exe.config
-C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\bin\Debug\TextEditorApp.exe
-C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\bin\Debug\TextEditorApp.pdb
-C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.csprojAssemblyReference.cache
 C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.FormNewUser.resources
 C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.LoginForm.resources
 C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.Properties.Resources.resources
 C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.csproj.GenerateResource.cache
 C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.csproj.CoreCompileInputs.cache
-C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.exe
-C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.pdb
-C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.MainForm.resources
+C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\bin\Debug\Idea Text Editor.exe.config
+C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\bin\Debug\Idea Text Editor.exe
+C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\bin\Debug\Idea Text Editor.pdb
+C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\Idea Text Editor.exe
+C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\Idea Text Editor.pdb
+C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.Idea.resources
+C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.csprojAssemblyReference.cache
