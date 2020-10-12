@@ -11,18 +11,8 @@ namespace TextEditorApp
     class Authentication
     {
         private Hashtable user = new Hashtable();
-        private string username, password;
         public Hashtable User { get => user; set => user = value; }
-        public string Username { get => username; set => username = value; }
-        public string Password { get => password; set => password = value; }
 
-        public Authentication(string username, string password)
-        {
-            Username = username;
-            Password = password;
-            ReadFile();
-            
-        }
         public Authentication()
         {
             ReadFile();
@@ -46,21 +36,25 @@ namespace TextEditorApp
                 Console.WriteLine(e.Message);
             }
         }
-        public bool Login()
+        public string[] Login(string username, string password)
         {
-            bool isMatch = false;
-            foreach(string key in User.Keys)
+            string isMatch = "FALSE";
+            string userType = "";
+            foreach (string key in User.Keys)
             {
-                if(key == username)
+                if (key == username)
                 {
                     User user = (User)User[key];
+                    
                     if (password == user.Password)
                     {
-                        isMatch = true;
+                        userType = user.UserType;
+                        isMatch = "TRUE";
                     }
                 }
             }
-            return isMatch;
+            string[] result = {isMatch.ToString(), userType, username};
+            return result;
         }
         public string createNewUser(User user)
         {

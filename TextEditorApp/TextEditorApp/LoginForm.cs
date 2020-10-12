@@ -35,10 +35,11 @@ namespace TextEditorApp
             }
             else
             {
-                Authentication auth = new Authentication(username, password);
-                if (auth.Login())
+                Authentication auth = new Authentication();
+                string[] result = auth.Login(username, password);
+                if (result[0].ToUpper() == "TRUE")
                 {
-                    MainForm mainForm = new MainForm();
+                    MainForm mainForm = new MainForm(result[1], result[2]);
                     mainForm.Show();
                     this.Hide();
                 }
