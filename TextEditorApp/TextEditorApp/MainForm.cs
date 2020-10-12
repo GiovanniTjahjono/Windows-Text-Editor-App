@@ -95,7 +95,7 @@ namespace TextEditorApp
 
         private void tsbBtnSave_Click(object sender, EventArgs e)
         {
-            operation.SaveFile();
+            MessageBox.Show(operation.SaveFile());
         }
 
         private void tsBtnCut_Click(object sender, EventArgs e)
@@ -146,6 +146,16 @@ namespace TextEditorApp
             LoginForm login = new LoginForm();
             login.Show();
             this.Close();
+        }
+
+        private void stBtnSaveAs_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(operation.SaveAs());
+        }
+
+        private void tsBtnNewFile_Click(object sender, EventArgs e)
+        {
+            operation.NewFile();
         }
     }
 }

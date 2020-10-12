@@ -221,6 +221,7 @@
             this.tsBtnNewFile.Size = new System.Drawing.Size(29, 25);
             this.tsBtnNewFile.Text = "New FIle";
             this.tsBtnNewFile.ToolTipText = "New File";
+            this.tsBtnNewFile.Click += new System.EventHandler(this.tsBtnNewFile_Click);
             // 
             // stBtnOpenFile
             // 
@@ -250,6 +251,7 @@
             this.stBtnSaveAs.Name = "stBtnSaveAs";
             this.stBtnSaveAs.Size = new System.Drawing.Size(29, 25);
             this.stBtnSaveAs.Text = "Save As";
+            this.stBtnSaveAs.Click += new System.EventHandler(this.stBtnSaveAs_Click);
             // 
             // toolStripSeparator3
             // 

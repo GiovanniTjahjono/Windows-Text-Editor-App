@@ -37,7 +37,7 @@ namespace TextEditorApp
                 try
                 {
                     MainEditor.LoadFile(openFile.FileName);
-                    FileDirectory = openFile.InitialDirectory;
+                    FileDirectory = openFile.FileName;
                 }
                 catch (Exception e)
                 {
@@ -50,25 +50,75 @@ namespace TextEditorApp
                 MessageBox.Show("salah");
             }
         }
-        public void SaveFile()
+        public string SaveFile()
         {
+            string message = "";
+            if(FileDirectory != null)
+            {
+                try
+                {
+                    mainEditor.SaveFile(FileDirectory,RichTextBoxStreamType.RichNoOleObjs);
+                    message = "File is saved";
+                }
+                catch(Exception e)
+                {
+                    message = "Failed to save file: " + e.Message;
+                }
+
+
+            } 
+            else
+            {
+                SaveFileDialog saveFile = new SaveFileDialog();
+                saveFile.Filter = "RTF Files|*.rtf";
+                DialogResult result = saveFile.ShowDialog();
+                if(result == DialogResult.OK)
+                {
+                    try
+                    {
+                        string fileDirectory = saveFile.FileName;
+                        FileDirectory = fileDirectory;
+                        mainEditor.SaveFile(fileDirectory, RichTextBoxStreamType.RichNoOleObjs);
+                        message = "File is saved";
+                    }
+                    catch(Exception e)
+                    {
+                        message = "Failed to save file: " + e.Message;
+                    }
+                    
+                }
+            }
+            return message;
+        }
+        public string SaveAs()
+        {
+            string message = "";
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Filter = "RTF Files|*.rtf";
-            saveFile.InitialDirectory = FileDirectory;
             DialogResult result = saveFile.ShowDialog();
-
-            Stream fileStream;
             if (result == DialogResult.OK)
             {
                 try
                 {
-                    mainEditor.SaveFile(FileDirectory, RichTextBoxStreamType.RichText);
+                    string fileDirectory = saveFile.FileName;
+                    FileDirectory = fileDirectory;
+                    mainEditor.SaveFile(fileDirectory, RichTextBoxStreamType.RichNoOleObjs);
+                    message = "File is saved";
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
+                    message = "Failed to save file: " + e.Message;
                 }
+
             }
+            return message;
+        }
+        public string NewFile()
+        {
+            string message = "";
+            mainEditor.Clear();
+            fileDirectory = null;
+            return message;
         }
         public void Cut()
         {
