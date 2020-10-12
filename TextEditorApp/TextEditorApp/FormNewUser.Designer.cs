@@ -32,19 +32,19 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPasswordCNU = new System.Windows.Forms.TextBox();
+            this.txtUsernameCNU = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblRetypePassword = new System.Windows.Forms.Label();
-            this.txtRetypePassword = new System.Windows.Forms.TextBox();
+            this.txtRetypePasswordCNU = new System.Windows.Forms.TextBox();
             this.lblFirstname = new System.Windows.Forms.Label();
-            this.txtFirstname = new System.Windows.Forms.TextBox();
+            this.txtFirstnameCNU = new System.Windows.Forms.TextBox();
             this.lblLastname = new System.Windows.Forms.Label();
-            this.txtLastname = new System.Windows.Forms.TextBox();
+            this.txtLastnameCNU = new System.Windows.Forms.TextBox();
             this.lblDateOfBirth = new System.Windows.Forms.Label();
             this.lblUserType = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.cmbUserType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCreateNewUser
@@ -55,6 +55,7 @@
             this.btnCreateNewUser.TabIndex = 14;
             this.btnCreateNewUser.Text = "Create New User";
             this.btnCreateNewUser.UseVisualStyleBackColor = true;
+            this.btnCreateNewUser.Click += new System.EventHandler(this.btnCreateNewUser_Click);
             // 
             // lblTitle
             // 
@@ -84,19 +85,19 @@
             this.lblUsername.TabIndex = 11;
             this.lblUsername.Text = "Username";
             // 
-            // textBox2
+            // txtPasswordCNU
             // 
-            this.textBox2.Location = new System.Drawing.Point(167, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 22);
-            this.textBox2.TabIndex = 10;
+            this.txtPasswordCNU.Location = new System.Drawing.Point(167, 140);
+            this.txtPasswordCNU.Name = "txtPasswordCNU";
+            this.txtPasswordCNU.Size = new System.Drawing.Size(125, 22);
+            this.txtPasswordCNU.TabIndex = 10;
             // 
-            // textBox1
+            // txtUsernameCNU
             // 
-            this.textBox1.Location = new System.Drawing.Point(167, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 22);
-            this.textBox1.TabIndex = 9;
+            this.txtUsernameCNU.Location = new System.Drawing.Point(167, 112);
+            this.txtUsernameCNU.Name = "txtUsernameCNU";
+            this.txtUsernameCNU.Size = new System.Drawing.Size(125, 22);
+            this.txtUsernameCNU.TabIndex = 9;
             // 
             // btnCancel
             // 
@@ -117,12 +118,12 @@
             this.lblRetypePassword.TabIndex = 17;
             this.lblRetypePassword.Text = "Retype Password";
             // 
-            // txtRetypePassword
+            // txtRetypePasswordCNU
             // 
-            this.txtRetypePassword.Location = new System.Drawing.Point(167, 168);
-            this.txtRetypePassword.Name = "txtRetypePassword";
-            this.txtRetypePassword.Size = new System.Drawing.Size(125, 22);
-            this.txtRetypePassword.TabIndex = 16;
+            this.txtRetypePasswordCNU.Location = new System.Drawing.Point(167, 168);
+            this.txtRetypePasswordCNU.Name = "txtRetypePasswordCNU";
+            this.txtRetypePasswordCNU.Size = new System.Drawing.Size(125, 22);
+            this.txtRetypePasswordCNU.TabIndex = 16;
             // 
             // lblFirstname
             // 
@@ -133,12 +134,12 @@
             this.lblFirstname.TabIndex = 19;
             this.lblFirstname.Text = "Firstname";
             // 
-            // txtFirstname
+            // txtFirstnameCNU
             // 
-            this.txtFirstname.Location = new System.Drawing.Point(167, 196);
-            this.txtFirstname.Name = "txtFirstname";
-            this.txtFirstname.Size = new System.Drawing.Size(125, 22);
-            this.txtFirstname.TabIndex = 18;
+            this.txtFirstnameCNU.Location = new System.Drawing.Point(167, 196);
+            this.txtFirstnameCNU.Name = "txtFirstnameCNU";
+            this.txtFirstnameCNU.Size = new System.Drawing.Size(125, 22);
+            this.txtFirstnameCNU.TabIndex = 18;
             // 
             // lblLastname
             // 
@@ -149,12 +150,12 @@
             this.lblLastname.TabIndex = 21;
             this.lblLastname.Text = "Lastname";
             // 
-            // txtLastname
+            // txtLastnameCNU
             // 
-            this.txtLastname.Location = new System.Drawing.Point(167, 224);
-            this.txtLastname.Name = "txtLastname";
-            this.txtLastname.Size = new System.Drawing.Size(125, 22);
-            this.txtLastname.TabIndex = 20;
+            this.txtLastnameCNU.Location = new System.Drawing.Point(167, 224);
+            this.txtLastnameCNU.Name = "txtLastnameCNU";
+            this.txtLastnameCNU.Size = new System.Drawing.Size(125, 22);
+            this.txtLastnameCNU.TabIndex = 20;
             // 
             // lblDateOfBirth
             // 
@@ -174,42 +175,45 @@
             this.lblUserType.TabIndex = 23;
             this.lblUserType.Text = "User Type";
             // 
-            // dateTimePicker1
+            // dtpDateOfBirth
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(167, 253);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(125, 22);
-            this.dateTimePicker1.TabIndex = 24;
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(167, 253);
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(125, 22);
+            this.dtpDateOfBirth.TabIndex = 24;
             // 
-            // comboBox1
+            // cmbUserType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(167, 282);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 24);
-            this.comboBox1.TabIndex = 25;
+            this.cmbUserType.FormattingEnabled = true;
+            this.cmbUserType.Items.AddRange(new object[] {
+            "Edit",
+            "View"});
+            this.cmbUserType.Location = new System.Drawing.Point(167, 282);
+            this.cmbUserType.Name = "cmbUserType";
+            this.cmbUserType.Size = new System.Drawing.Size(125, 24);
+            this.cmbUserType.TabIndex = 25;
             // 
             // FormNewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.cmbUserType);
+            this.Controls.Add(this.dtpDateOfBirth);
             this.Controls.Add(this.lblUserType);
             this.Controls.Add(this.lblDateOfBirth);
             this.Controls.Add(this.lblLastname);
-            this.Controls.Add(this.txtLastname);
+            this.Controls.Add(this.txtLastnameCNU);
             this.Controls.Add(this.lblFirstname);
-            this.Controls.Add(this.txtFirstname);
+            this.Controls.Add(this.txtFirstnameCNU);
             this.Controls.Add(this.lblRetypePassword);
-            this.Controls.Add(this.txtRetypePassword);
+            this.Controls.Add(this.txtRetypePasswordCNU);
             this.Controls.Add(this.btnCreateNewUser);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPasswordCNU);
+            this.Controls.Add(this.txtUsernameCNU);
             this.Controls.Add(this.btnCancel);
             this.Name = "FormNewUser";
             this.Text = "FormNewUser";
@@ -223,18 +227,18 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPasswordCNU;
+        private System.Windows.Forms.TextBox txtUsernameCNU;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblRetypePassword;
-        private System.Windows.Forms.TextBox txtRetypePassword;
+        private System.Windows.Forms.TextBox txtRetypePasswordCNU;
         private System.Windows.Forms.Label lblFirstname;
-        private System.Windows.Forms.TextBox txtFirstname;
+        private System.Windows.Forms.TextBox txtFirstnameCNU;
         private System.Windows.Forms.Label lblLastname;
-        private System.Windows.Forms.TextBox txtLastname;
+        private System.Windows.Forms.TextBox txtLastnameCNU;
         private System.Windows.Forms.Label lblDateOfBirth;
         private System.Windows.Forms.Label lblUserType;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
+        private System.Windows.Forms.ComboBox cmbUserType;
     }
 }

@@ -9,3 +9,4 @@ C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\
 C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.csproj.CoreCompileInputs.cache
 C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.exe
 C:\Users\ivank\Source\Repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.pdb
+C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.MainForm.resources

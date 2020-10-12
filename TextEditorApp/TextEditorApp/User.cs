@@ -37,10 +37,5 @@ namespace TextEditorApp
             Username = username;
             Password = password;
         }
-
-        public bool Login()
-        {
-            return true;
-        }
     }
 }
