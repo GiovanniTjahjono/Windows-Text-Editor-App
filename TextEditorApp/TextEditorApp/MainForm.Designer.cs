@@ -44,9 +44,16 @@
             this.rtbMainEditor = new System.Windows.Forms.RichTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsLblWordCounted = new System.Windows.Forms.ToolStripLabel();
             this.tsBtnCut = new System.Windows.Forms.ToolStripButton();
             this.tsBtnCopy = new System.Windows.Forms.ToolStripButton();
             this.tsBtnPaste = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.tsBtnNewFile = new System.Windows.Forms.ToolStripButton();
             this.stBtnOpenFile = new System.Windows.Forms.ToolStripButton();
             this.tsbBtnSave = new System.Windows.Forms.ToolStripButton();
@@ -66,13 +73,6 @@
             this.tsMenuItemCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMenuItemPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsLblWordCounted = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -229,7 +229,38 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(193, 6);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(42, 6);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(42, 0);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(42, 20);
+            this.toolStripLabel2.Text = "Tools";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 28);
+            // 
+            // tsLblWordCounted
+            // 
+            this.tsLblWordCounted.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsLblWordCounted.Margin = new System.Windows.Forms.Padding(0, 1, 9, 2);
+            this.tsLblWordCounted.Name = "tsLblWordCounted";
+            this.tsLblWordCounted.Size = new System.Drawing.Size(55, 25);
+            this.tsLblWordCounted.Text = "0 word";
+            this.tsLblWordCounted.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tsLblWordCounted.ToolTipText = "Word counted";
             // 
             // tsBtnCut
             // 
@@ -261,6 +292,26 @@
             this.tsBtnPaste.Size = new System.Drawing.Size(42, 24);
             this.tsBtnPaste.Text = "Paste";
             this.tsBtnPaste.Click += new System.EventHandler(this.tsBtnPaste_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::TextEditorApp.Properties.Resources.icons8_undo_48;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(42, 24);
+            this.toolStripButton1.Text = "tsBtnUndo";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::TextEditorApp.Properties.Resources.icons8_redo_48;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(42, 24);
+            this.toolStripButton2.Text = "tsBtnRedo";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // tsBtnNewFile
             // 
@@ -391,7 +442,7 @@
             // 
             this.tsMenuItemUndo.Image = global::TextEditorApp.Properties.Resources.icons8_undo_48;
             this.tsMenuItemUndo.Name = "tsMenuItemUndo";
-            this.tsMenuItemUndo.Size = new System.Drawing.Size(224, 26);
+            this.tsMenuItemUndo.Size = new System.Drawing.Size(196, 26);
             this.tsMenuItemUndo.Text = "Undo    Ctrl + Z";
             this.tsMenuItemUndo.Click += new System.EventHandler(this.tsMenuItemUndo_Click);
             // 
@@ -399,7 +450,7 @@
             // 
             this.tsMenuItemRedo.Image = global::TextEditorApp.Properties.Resources.icons8_redo_48;
             this.tsMenuItemRedo.Name = "tsMenuItemRedo";
-            this.tsMenuItemRedo.Size = new System.Drawing.Size(224, 26);
+            this.tsMenuItemRedo.Size = new System.Drawing.Size(196, 26);
             this.tsMenuItemRedo.Text = "Redo    Ctrl + Q";
             this.tsMenuItemRedo.Click += new System.EventHandler(this.tsMenuItemRedo_Click);
             // 
@@ -407,7 +458,7 @@
             // 
             this.tsMenuItemCut.Image = global::TextEditorApp.Properties.Resources.cut;
             this.tsMenuItemCut.Name = "tsMenuItemCut";
-            this.tsMenuItemCut.Size = new System.Drawing.Size(224, 26);
+            this.tsMenuItemCut.Size = new System.Drawing.Size(196, 26);
             this.tsMenuItemCut.Text = "Cut        Ctrl + X";
             this.tsMenuItemCut.Click += new System.EventHandler(this.tsMenuItemCut_Click);
             // 
@@ -415,7 +466,7 @@
             // 
             this.tsMenuItemCopy.Image = global::TextEditorApp.Properties.Resources.copy;
             this.tsMenuItemCopy.Name = "tsMenuItemCopy";
-            this.tsMenuItemCopy.Size = new System.Drawing.Size(224, 26);
+            this.tsMenuItemCopy.Size = new System.Drawing.Size(196, 26);
             this.tsMenuItemCopy.Text = "Copy     Ctrl + C";
             this.tsMenuItemCopy.Click += new System.EventHandler(this.tsMenuItemCopy_Click);
             // 
@@ -423,7 +474,7 @@
             // 
             this.tsMenuItemPaste.Image = global::TextEditorApp.Properties.Resources.paste;
             this.tsMenuItemPaste.Name = "tsMenuItemPaste";
-            this.tsMenuItemPaste.Size = new System.Drawing.Size(224, 26);
+            this.tsMenuItemPaste.Size = new System.Drawing.Size(196, 26);
             this.tsMenuItemPaste.Text = "Paste     Ctrl + X";
             this.tsMenuItemPaste.Click += new System.EventHandler(this.tsMenuItemPaste_Click);
             // 
@@ -434,57 +485,6 @@
             this.tsMenuItemAbout.Size = new System.Drawing.Size(133, 26);
             this.tsMenuItemAbout.Text = "About";
             this.tsMenuItemAbout.Click += new System.EventHandler(this.tsMenuItemAbout_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(42, 6);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(42, 0);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(42, 20);
-            this.toolStripLabel2.Text = "Tools";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::TextEditorApp.Properties.Resources.icons8_undo_48;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(42, 24);
-            this.toolStripButton1.Text = "tsBtnUndo";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::TextEditorApp.Properties.Resources.icons8_redo_48;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(42, 24);
-            this.toolStripButton2.Text = "tsBtnRedo";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 28);
-            // 
-            // tsLblWordCounted
-            // 
-            this.tsLblWordCounted.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsLblWordCounted.Margin = new System.Windows.Forms.Padding(0, 1, 9, 2);
-            this.tsLblWordCounted.Name = "tsLblWordCounted";
-            this.tsLblWordCounted.Size = new System.Drawing.Size(69, 25);
-            this.tsLblWordCounted.Text = "12 words";
-            this.tsLblWordCounted.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.tsLblWordCounted.ToolTipText = "Word counted";
             // 
             // Idea
             // 

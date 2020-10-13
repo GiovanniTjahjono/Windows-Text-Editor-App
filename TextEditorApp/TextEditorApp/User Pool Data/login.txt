@@ -17,3 +17,4 @@ user2,321password,Edit,Diana,Prince,29-01-1986
 user1,password123,View,John,Smith,12-09-1973
 alex,1,Edit,Alexander,Harris,13-10-2020
 ivan,1,View,Ivan,Alex,13-10-2020
+Giovanni,1,Edit,Giovanni,Tjahjono,16-06-1996

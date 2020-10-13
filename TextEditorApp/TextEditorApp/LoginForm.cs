@@ -32,6 +32,9 @@ namespace TextEditorApp
             if(username == "" || password == "")
             {
                 MessageBox.Show("Please input username and password");
+                txtUsernameLogin.Focus();
+                txtUsernameLogin.SelectionStart = 0;
+                txtUsernameLogin.SelectionLength = txtUsernameLogin.Text.Length;
             }
             else
             {
@@ -46,6 +49,9 @@ namespace TextEditorApp
                 else
                 {
                     MessageBox.Show("Combination or your username and password is wrong", "Credential is not valid", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    txtUsernameLogin.Focus();
+                    txtUsernameLogin.SelectionStart = 0;
+                    txtUsernameLogin.SelectionLength = txtUsernameLogin.Text.Length;
                 }
             }
 

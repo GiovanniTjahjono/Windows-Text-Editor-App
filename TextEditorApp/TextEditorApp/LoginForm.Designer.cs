@@ -43,20 +43,24 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.Location = new System.Drawing.Point(135, 319);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(125, 23);
-            this.btnLogin.TabIndex = 0;
+            this.btnLogin.Size = new System.Drawing.Size(125, 33);
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtUsernameLogin
             // 
+            this.txtUsernameLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsernameLogin.ForeColor = System.Drawing.Color.Black;
             this.txtUsernameLogin.Location = new System.Drawing.Point(135, 263);
             this.txtUsernameLogin.Name = "txtUsernameLogin";
             this.txtUsernameLogin.Size = new System.Drawing.Size(125, 22);
-            this.txtUsernameLogin.TabIndex = 1;
+            this.txtUsernameLogin.TabIndex = 0;
             // 
             // txtPasswordLogin
             // 
@@ -64,11 +68,12 @@
             this.txtPasswordLogin.Name = "txtPasswordLogin";
             this.txtPasswordLogin.PasswordChar = '*';
             this.txtPasswordLogin.Size = new System.Drawing.Size(125, 22);
-            this.txtPasswordLogin.TabIndex = 2;
+            this.txtPasswordLogin.TabIndex = 1;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
+            this.lblUsername.ForeColor = System.Drawing.SystemColors.MenuText;
             this.lblUsername.Location = new System.Drawing.Point(56, 263);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(73, 17);
@@ -78,6 +83,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
+            this.lblPassword.ForeColor = System.Drawing.SystemColors.MenuText;
             this.lblPassword.Location = new System.Drawing.Point(60, 294);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(69, 17);
@@ -88,6 +94,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.MenuText;
             this.lblTitle.Location = new System.Drawing.Point(111, 218);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(174, 25);
@@ -96,22 +103,27 @@
             // 
             // btnNewUser
             // 
-            this.btnNewUser.Location = new System.Drawing.Point(135, 348);
+            this.btnNewUser.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNewUser.Location = new System.Drawing.Point(135, 358);
             this.btnNewUser.Name = "btnNewUser";
-            this.btnNewUser.Size = new System.Drawing.Size(125, 23);
-            this.btnNewUser.TabIndex = 6;
+            this.btnNewUser.Size = new System.Drawing.Size(125, 33);
+            this.btnNewUser.TabIndex = 3;
             this.btnNewUser.Text = "New User";
-            this.btnNewUser.UseVisualStyleBackColor = true;
+            this.btnNewUser.UseVisualStyleBackColor = false;
             this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(135, 377);
+            this.btnExit.BackColor = System.Drawing.Color.Crimson;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExit.Location = new System.Drawing.Point(135, 423);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(125, 23);
-            this.btnExit.TabIndex = 7;
+            this.btnExit.Size = new System.Drawing.Size(125, 33);
+            this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // pictureBox1
@@ -129,7 +141,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 450);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(398, 490);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnNewUser);
@@ -153,12 +166,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.TextBox txtUsernameLogin;
-        private System.Windows.Forms.TextBox txtPasswordLogin;
+        
+       
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.TextBox txtUsernameLogin;
+        private System.Windows.Forms.TextBox txtPasswordLogin;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnNewUser;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pictureBox1;

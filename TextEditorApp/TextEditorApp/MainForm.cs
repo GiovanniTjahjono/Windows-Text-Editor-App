@@ -117,7 +117,7 @@ namespace TextEditorApp
 
         private void tsMenuItemAbout_Click(object sender, EventArgs e)
         {
-            Form1 about = new Form1();
+            About about = new About();
             about.Show();
         }
 
