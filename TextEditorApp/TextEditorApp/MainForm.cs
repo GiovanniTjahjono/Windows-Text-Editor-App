@@ -275,6 +275,29 @@ namespace TextEditorApp
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             rtbMainEditor.Redo();
+          
+        }
+
+        private void rtbMainEditor_TextChanged(object sender, EventArgs e)
+        {
+            int totalWord = 0;
+            string[] words = rtbMainEditor.Text.Split(' ', '\n');
+            foreach (string word in words)
+            {
+                if (word != "")
+                {
+                    totalWord++;
+                }
+            }
+            if(totalWord > 1)
+            {
+                tsLblWordCounted.Text = totalWord.ToString() + " words";
+            }
+            else
+            {
+                tsLblWordCounted.Text = totalWord.ToString() + " word";
+            }
+            
         }
     }
 }

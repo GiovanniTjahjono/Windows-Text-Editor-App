@@ -24,31 +24,80 @@ namespace TextEditorApp
         }
         public void OpenFile()
         {
-            //Open the file
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Title = "Open rich text file";
-            openFile.DefaultExt = "*.rtf";
-            openFile.Filter = "RTF Files|*.rtf";
-
-            DialogResult result = openFile.ShowDialog();
-
-            if (result == DialogResult.OK)
+            if (mainEditor.Text.Length > 0)
             {
-                try
+                DialogResult resultDialog = MessageBox.Show("Do you want to save current document?", "Save", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+
+                if (resultDialog == DialogResult.Yes)
                 {
-                    MainEditor.LoadFile(openFile.FileName);
-                    FileDirectory = openFile.FileName;
+                    SaveFile();
+                    //Open the file
+                    OpenFileDialog openFile = new OpenFileDialog();
+                    openFile.Title = "Open rich text file";
+                    openFile.DefaultExt = "*.rtf";
+                    openFile.Filter = "RTF Files|*.rtf";
+
+                    DialogResult result = openFile.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        try
+                        {
+                            MainEditor.LoadFile(openFile.FileName);
+                            FileDirectory = openFile.FileName;
+                        }
+                        catch (Exception e)
+                        {
+                            MessageBox.Show(e.Message);
+                        }
+
+                    }
+                    else
+                    {
+                        // Do nothing
+                    }
                 }
-                catch (Exception e)
+                else if (resultDialog == DialogResult.No)
                 {
-                    MessageBox.Show(e.Message);
+                    //Open the file
+                    OpenFileDialog openFile = new OpenFileDialog();
+                    openFile.Title = "Open rich text file";
+                    openFile.DefaultExt = "*.rtf";
+                    openFile.Filter = "RTF Files|*.rtf";
+
+                    DialogResult result = openFile.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        try
+                        {
+                            MainEditor.LoadFile(openFile.FileName);
+                            FileDirectory = openFile.FileName;
+                        }
+                        catch (Exception e)
+                        {
+                            MessageBox.Show(e.Message);
+                        }
+
+                    }
+                    else
+                    {
+                        // Do nothing
+                    }
+                }
+                else
+                {
+                    // Do Nothing
                 }
 
             }
             else
             {
-                // Do nothing
+                mainEditor.Clear();
+                fileDirectory = null;
             }
+
+           
         }
         public void SaveFile()
         {

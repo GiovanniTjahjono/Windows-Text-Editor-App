@@ -72,6 +72,7 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsLblWordCounted = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -152,7 +153,8 @@
             this.tsCmbFontSize,
             this.tsLblUsername,
             this.toolStripButton8,
-            this.toolStripSeparator6});
+            this.toolStripSeparator6,
+            this.tsLblWordCounted});
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 28);
@@ -188,7 +190,6 @@
             // 
             // tsLblUsername
             // 
-            this.tsLblUsername.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tsLblUsername.Name = "tsLblUsername";
             this.tsLblUsername.Size = new System.Drawing.Size(108, 25);
             this.tsLblUsername.Text = "Username: jasa";
@@ -222,6 +223,7 @@
             this.rtbMainEditor.Size = new System.Drawing.Size(740, 379);
             this.rtbMainEditor.TabIndex = 3;
             this.rtbMainEditor.Text = "";
+            this.rtbMainEditor.TextChanged += new System.EventHandler(this.rtbMainEditor_TextChanged);
             this.rtbMainEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtbMainEditor_KeyDown);
             // 
             // toolStripSeparator4
@@ -333,7 +335,6 @@
             // 
             // toolStripButton8
             // 
-            this.toolStripButton8.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton8.Image = global::TextEditorApp.Properties.Resources.icons8_help_48;
             this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -475,6 +476,16 @@
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 28);
             // 
+            // tsLblWordCounted
+            // 
+            this.tsLblWordCounted.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsLblWordCounted.Margin = new System.Windows.Forms.Padding(0, 1, 9, 2);
+            this.tsLblWordCounted.Name = "tsLblWordCounted";
+            this.tsLblWordCounted.Size = new System.Drawing.Size(69, 25);
+            this.tsLblWordCounted.Text = "12 words";
+            this.tsLblWordCounted.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tsLblWordCounted.ToolTipText = "Word counted";
+            // 
             // Idea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -545,5 +556,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripLabel tsLblWordCounted;
     }
 }
