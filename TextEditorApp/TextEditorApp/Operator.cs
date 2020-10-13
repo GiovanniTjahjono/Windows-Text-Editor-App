@@ -151,7 +151,15 @@ namespace TextEditorApp
         }
         public void FontSize(int fontSize)
         {
-            mainEditor.SelectionFont = new Font("Tahoma",fontSize, mainEditor.SelectionFont.Style);
+            if(mainEditor.SelectionFont == null)
+            {
+                mainEditor.SelectionFont = new Font("Tahoma", fontSize);
+            }
+            else
+            {
+                mainEditor.SelectionFont = new Font("Tahoma", fontSize, mainEditor.SelectionFont.Style);
+            }
+           
         }
         public void Bold()
         {
@@ -192,5 +200,6 @@ namespace TextEditorApp
                 mainEditor.SelectionFont = new Font(mainEditor.SelectionFont, mainEditor.SelectionFont.Style & ~FontStyle.Underline);
             }
         }
+       
     }
 }

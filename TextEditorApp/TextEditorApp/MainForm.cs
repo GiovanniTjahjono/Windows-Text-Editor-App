@@ -126,8 +126,6 @@ namespace TextEditorApp
 
         private void tsMenuItemLogout_Click(object sender, EventArgs e)
         {
-            LoginForm login = new LoginForm();
-            login.Show();
             this.Close();
         }
 
@@ -170,13 +168,57 @@ namespace TextEditorApp
 
         private void rtbMainEditor_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.Control == true && e.KeyCode == Keys.Q)
+            {
+                rtbMainEditor.Redo();
+            }
+            if (e.Control == true && e.KeyCode == Keys.Z)
+            {
+                rtbMainEditor.Undo();
+            }
             //Override default key shortcut
             if (e.Control == true && e.KeyCode == Keys.A)
             {
                 rtbMainEditor.SelectAll();
                 rtbMainEditor.Focus();
             }
-            
+            //Cut shortcut function
+            if (e.Control == true && e.KeyCode == Keys.X)
+            {
+                operation.Cut();
+            }
+            if (e.Control == true && e.KeyCode == Keys.C)
+            {
+                operation.Copy();
+            }
+            if (e.Control == true && e.KeyCode == Keys.V)
+            {
+                operation.Paste();
+            }
+            if (e.Control == true && e.KeyCode == Keys.S)
+            {
+                operation.SaveFile();
+            }
+            if (e.Control == true && e.KeyCode == Keys.N)
+            {
+                operation.NewFile();
+            }
+            if (e.Control == true && e.KeyCode == Keys.O)
+            {
+                operation.OpenFile();
+            }
+            if (e.Control == true && e.KeyCode == Keys.B)
+            {
+                operation.Bold();
+            }
+            if (e.Control == true && e.KeyCode == Keys.I)
+            {
+                operation.Italic();
+            }
+            if (e.Control == true && e.KeyCode == Keys.U)
+            {
+                operation.Underline();
+            }
         }
 
         private void Idea_FormClosed(object sender, FormClosedEventArgs e)
@@ -213,6 +255,26 @@ namespace TextEditorApp
         private void tsMenuItemPaste_Click(object sender, EventArgs e)
         {
             operation.Paste();
+        }
+
+        private void tsMenuItemUndo_Click(object sender, EventArgs e)
+        {
+            rtbMainEditor.Undo();
+        }
+
+        private void tsMenuItemRedo_Click(object sender, EventArgs e)
+        {
+            rtbMainEditor.Redo();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            rtbMainEditor.Undo();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            rtbMainEditor.Redo();
         }
     }
 }

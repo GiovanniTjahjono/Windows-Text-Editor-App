@@ -121,6 +121,8 @@
   <ItemGroup>
     <Content Include="Icons\Idea Logo.jpg" />
     <Content Include="idea-01.ico" />
+    <None Include="Resources\icons8-redo-48.png" />
+    <None Include="Resources\icons8-undo-48.png" />
     <None Include="Resources\Untitled-1-01.png" />
     <Content Include="User Pool Data\login.txt" />
     <None Include="Icons\icons8-help-48.png" />
