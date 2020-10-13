@@ -17,7 +17,10 @@ namespace TextEditorApp
         {
             InitializeComponent();
             operation = new Operation(rtbMainEditor);
-            if(user.UserType.ToUpper() == "EDIT")
+            tsCmbFontSize.SelectedIndex = 4;
+            rtbMainEditor.ShortcutsEnabled = false;
+            rtbMainEditor.KeyUp += new KeyEventHandler(rtbMainEditor_KeyDown);
+            if (user.UserType.ToUpper() == "EDIT")
             {
                 tsLblUsername.Text = "Username: " + user.Username + " (can edit)";
             }
@@ -75,17 +78,15 @@ namespace TextEditorApp
                 {
                     MessageBox.Show(e.Message);
                 }
-                
             }
             else
             {
                 MessageBox.Show("salah");
             }
-            
         }
         public void SaveFile()
         {
-
+            operation.SaveFile();
         }
 
         private void tsmItemOpenFile_Click(object sender, EventArgs e)
@@ -95,7 +96,7 @@ namespace TextEditorApp
 
         private void tsbBtnSave_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(operation.SaveFile());
+            operation.SaveFile();
         }
 
         private void tsBtnCut_Click(object sender, EventArgs e)
@@ -115,30 +116,12 @@ namespace TextEditorApp
 
         private void tsBtnBoldText_Click(object sender, EventArgs e)
         {
-            if(!tsBtnBoldText.Checked)
-            {
-                operation.Bold();
-                tsBtnBoldText.Checked = true;
-            }
-            else
-            {
-                operation.Regular();
-                tsBtnBoldText.Checked = false;
-            }
+            operation.Bold();
         }
 
         private void tsBtnItalic_Click(object sender, EventArgs e)
         {
-            if(!tsBtnItalic.Checked)
-            {
-                operation.Italic(); 
-                tsBtnItalic.Checked = true;
-            }
-            else
-            {
-                operation.Regular();
-                tsBtnItalic.Checked = false;
-            }
+            operation.Italic();
         }
 
         private void tsMenuItemLogout_Click(object sender, EventArgs e)
@@ -150,7 +133,7 @@ namespace TextEditorApp
 
         private void stBtnSaveAs_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(operation.SaveAs());
+            operation.SaveAs();
         }
 
         private void tsBtnNewFile_Click(object sender, EventArgs e)
@@ -171,8 +154,66 @@ namespace TextEditorApp
 
         private void Idea_FormClosing(object sender, FormClosingEventArgs e)
         {
+           
+            
+        }
+
+        private void tsCmbFontSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            operation.FontSize(int.Parse(tsCmbFontSize.SelectedItem.ToString()));
+        }
+
+        private void tsBtnUnderline_Click(object sender, EventArgs e)
+        {
+            operation.Underline();
+        }
+
+        private void rtbMainEditor_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Override default key shortcut
+            if (e.Control == true && e.KeyCode == Keys.A)
+            {
+                rtbMainEditor.SelectAll();
+                rtbMainEditor.Focus();
+            }
+            
+        }
+
+        private void Idea_FormClosed(object sender, FormClosedEventArgs e)
+        {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
         }
+
+        private void tsmItemNewFile_Click(object sender, EventArgs e)
+        {
+            operation.OpenFile();
+        }
+
+        private void tsMenuItemSave_Click(object sender, EventArgs e)
+        {
+            operation.SaveFile();
+        }
+
+        private void tsMenuItemSaveAs_Click(object sender, EventArgs e)
+        {
+            operation.SaveAs();
+        }
+
+        private void tsMenuItemCut_Click(object sender, EventArgs e)
+        {
+            operation.Cut();
+        }
+
+        private void tsMenuItemCopy_Click(object sender, EventArgs e)
+        {
+            operation.Copy();
+        }
+
+        private void tsMenuItemPaste_Click(object sender, EventArgs e)
+        {
+            operation.Paste();
+        }
     }
 }
+

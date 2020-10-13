@@ -47,25 +47,22 @@ namespace TextEditorApp
             }
             else
             {
-                MessageBox.Show("salah");
+                // Do nothing
             }
         }
-        public string SaveFile()
+        public void SaveFile()
         {
-            string message = "";
             if(FileDirectory != null)
             {
                 try
                 {
                     mainEditor.SaveFile(FileDirectory,RichTextBoxStreamType.RichNoOleObjs);
-                    message = "File is saved";
+                    MessageBox.Show("File is saved", "Idea", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch(Exception e)
                 {
-                    message = "Failed to save file: " + e.Message;
+                    MessageBox.Show("Failed to save file: " + e.Message, "Idea", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-
             } 
             else
             {
@@ -79,20 +76,18 @@ namespace TextEditorApp
                         string fileDirectory = saveFile.FileName;
                         FileDirectory = fileDirectory;
                         mainEditor.SaveFile(fileDirectory, RichTextBoxStreamType.RichNoOleObjs);
-                        message = "File is saved";
+                        MessageBox.Show("File is saved", "Idea", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch(Exception e)
                     {
-                        message = "Failed to save file: " + e.Message;
+                        MessageBox.Show("Failed to save file: " + e.Message, "Idea", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     
                 }
             }
-            return message;
         }
-        public string SaveAs()
+        public void SaveAs()
         {
-            string message = "";
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Filter = "RTF Files|*.rtf";
             DialogResult result = saveFile.ShowDialog();
@@ -103,22 +98,44 @@ namespace TextEditorApp
                     string fileDirectory = saveFile.FileName;
                     FileDirectory = fileDirectory;
                     mainEditor.SaveFile(fileDirectory, RichTextBoxStreamType.RichNoOleObjs);
-                    message = "File is saved";
+                    MessageBox.Show("File is saved", "Idea", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception e)
                 {
-                    message = "Failed to save file: " + e.Message;
+                    MessageBox.Show("Failed to save file: " + e.Message, "Idea", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
-            return message;
         }
-        public string NewFile()
+        public void NewFile()
         {
-            string message = "";
-            mainEditor.Clear();
-            fileDirectory = null;
-            return message;
+            if(mainEditor.Text.Length > 0)
+            {
+                DialogResult result = MessageBox.Show("Do you want to save current document?", "Save", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                
+                if(result == DialogResult.Yes)
+                {
+                    SaveFile();
+                    mainEditor.Clear();
+                    fileDirectory = null;
+                }
+                else if(result == DialogResult.No)
+                {
+                    mainEditor.Clear();
+                    fileDirectory = null;
+                }
+                else
+                {
+                    // Do Nothing
+                }
+                
+            }
+            else
+            {
+                mainEditor.Clear();
+                fileDirectory = null;
+            }
+            
         }
         public void Cut()
         {
@@ -132,48 +149,48 @@ namespace TextEditorApp
         {
             mainEditor.Paste();
         }
+        public void FontSize(int fontSize)
+        {
+            mainEditor.SelectionFont = new Font("Tahoma",fontSize, mainEditor.SelectionFont.Style);
+        }
         public void Bold()
         {
-            if(mainEditor.SelectionLength > 0) {
-                mainEditor.SelectionFont = new Font(mainEditor.Font, FontStyle.Bold);
-            } 
-            else
+
+            if(mainEditor.SelectionFont != null)
             {
-                mainEditor.SelectionFont = new Font(mainEditor.SelectionFont, FontStyle.Bold | mainEditor.SelectionFont.Style);
+                if (mainEditor.SelectionFont.Bold == false)
+                {
+                    mainEditor.SelectionFont = new Font(mainEditor.SelectionFont, mainEditor.SelectionFont.Style | FontStyle.Bold);
+                }
+                else
+                {
+                    mainEditor.SelectionFont = new Font(mainEditor.SelectionFont, mainEditor.SelectionFont.Style & ~FontStyle.Bold);
+                }
             }
+            
            
         }
         public void Italic()
         {
-            if(mainEditor.SelectionLength > 0)
+            if (mainEditor.SelectionFont.Italic == false)
             {
-                mainEditor.SelectionFont = new Font(mainEditor.SelectionFont, FontStyle.Italic | mainEditor.SelectionFont.Style);
+                mainEditor.SelectionFont = new Font(mainEditor.SelectionFont, mainEditor.SelectionFont.Style | FontStyle.Italic);
             }
             else
             {
-                mainEditor.SelectionFont = new Font(mainEditor.Font, System.Drawing.FontStyle.Italic);
+                mainEditor.SelectionFont = new Font(mainEditor.SelectionFont, mainEditor.SelectionFont.Style & ~FontStyle.Italic);
             }
-           
         }
         public void Underline()
         {
-            mainEditor.SelectionFont = new Font(mainEditor.Font, System.Drawing.FontStyle.Underline);
-        }
-        public void Regular()
-        {
-            if (mainEditor.SelectionLength > 0)
+            if (mainEditor.SelectionFont.Underline == false)
             {
-                mainEditor.SelectionFont = new Font(mainEditor.SelectionFont, FontStyle.Regular | mainEditor.SelectionFont.Style);
+                mainEditor.SelectionFont = new Font(mainEditor.SelectionFont, mainEditor.SelectionFont.Style | FontStyle.Underline);
             }
             else
             {
-                mainEditor.SelectionFont = new Font(mainEditor.Font, System.Drawing.FontStyle.Bold);
+                mainEditor.SelectionFont = new Font(mainEditor.SelectionFont, mainEditor.SelectionFont.Style & ~FontStyle.Underline);
             }
-
-        }
-        public void BoldAndItalic()
-        {
-            mainEditor.SelectionFont = new Font(mainEditor.Font, FontStyle.Italic | mainEditor.SelectionFont.Style);
         }
     }
 }

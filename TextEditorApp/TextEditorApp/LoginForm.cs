@@ -53,12 +53,12 @@ namespace TextEditorApp
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
     }
 }
