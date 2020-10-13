@@ -13,6 +13,7 @@ namespace TextEditorApp
     public partial class Idea : Form
     {
         private Operation operation;
+        private bool textHasChanged = false;
         public Idea(User user)
         {
             InitializeComponent();
@@ -52,46 +53,16 @@ namespace TextEditorApp
         private void stBtnOpenFile_Click(object sender, EventArgs e)
         {
             
-            operation.OpenFile();
-        }
-        public void NewFile()
-        {
-            
-        }
-        public void OpenFile()
-        {
-            //Open the file
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Title = "Open rich text file";
-            openFile.DefaultExt = "*.rtf";
-            openFile.Filter = "RTF Files|*.rtf";
-
-            DialogResult result = openFile.ShowDialog();
-
-            if (result == DialogResult.OK)
-            {
-                try
-                {
-                    rtbMainEditor.LoadFile(openFile.FileName);
-                }
-                catch(Exception e)
-                {
-                    MessageBox.Show(e.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("salah");
-            }
-        }
-        public void SaveFile()
-        {
-            operation.SaveFile();
+            operation.OpenFile(textHasChanged);
+            textHasChanged = false;
         }
 
+       
+       
         private void tsmItemOpenFile_Click(object sender, EventArgs e)
         {
-            OpenFile();
+            operation.OpenFile(textHasChanged);
+            textHasChanged = false;
         }
 
         private void tsbBtnSave_Click(object sender, EventArgs e)
@@ -205,7 +176,7 @@ namespace TextEditorApp
             }
             if (e.Control == true && e.KeyCode == Keys.O)
             {
-                operation.OpenFile();
+                operation.OpenFile(textHasChanged);
             }
             if (e.Control == true && e.KeyCode == Keys.B)
             {
@@ -229,7 +200,8 @@ namespace TextEditorApp
 
         private void tsmItemNewFile_Click(object sender, EventArgs e)
         {
-            operation.OpenFile();
+            operation.OpenFile(textHasChanged);
+            textHasChanged = false;
         }
 
         private void tsMenuItemSave_Click(object sender, EventArgs e)
@@ -280,6 +252,7 @@ namespace TextEditorApp
 
         private void rtbMainEditor_TextChanged(object sender, EventArgs e)
         {
+            textHasChanged = true;
             int totalWord = 0;
             string[] words = rtbMainEditor.Text.Split(' ', '\n');
             foreach (string word in words)
