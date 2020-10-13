@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace TextEditorApp
 {
-    class User
+    public class User
     {
-        //initiate the properties
+        //initiate the fields
         string username, password, firstname, lastname, userType;
         DateTime dateOfBirth;
 
@@ -30,12 +31,6 @@ namespace TextEditorApp
             UserType = userType;
             DateOfBirth = dateOfBirth;
         }
-
-        //Initiate contructor for login
-        public User(string username, string password)
-        {
-            Username = username;
-            Password = password;
-        }
+        public User() { }
     }
 }

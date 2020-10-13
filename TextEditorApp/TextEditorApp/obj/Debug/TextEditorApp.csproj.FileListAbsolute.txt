@@ -10,3 +10,4 @@ C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\
 C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\Idea Text Editor.pdb
 C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.Idea.resources
 C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.csprojAssemblyReference.cache
+C:\Users\ivank\source\repos\Windows-Text-Editor-App\TextEditorApp\TextEditorApp\obj\Debug\TextEditorApp.Form1.resources

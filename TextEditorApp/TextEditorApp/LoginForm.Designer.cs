@@ -43,7 +43,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(169, 319);
+            this.btnLogin.Location = new System.Drawing.Point(135, 319);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(125, 23);
             this.btnLogin.TabIndex = 0;
@@ -53,14 +53,14 @@
             // 
             // txtUsernameLogin
             // 
-            this.txtUsernameLogin.Location = new System.Drawing.Point(169, 263);
+            this.txtUsernameLogin.Location = new System.Drawing.Point(135, 263);
             this.txtUsernameLogin.Name = "txtUsernameLogin";
             this.txtUsernameLogin.Size = new System.Drawing.Size(125, 22);
             this.txtUsernameLogin.TabIndex = 1;
             // 
             // txtPasswordLogin
             // 
-            this.txtPasswordLogin.Location = new System.Drawing.Point(169, 291);
+            this.txtPasswordLogin.Location = new System.Drawing.Point(135, 291);
             this.txtPasswordLogin.Name = "txtPasswordLogin";
             this.txtPasswordLogin.PasswordChar = '*';
             this.txtPasswordLogin.Size = new System.Drawing.Size(125, 22);
@@ -69,7 +69,7 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(90, 263);
+            this.lblUsername.Location = new System.Drawing.Point(56, 263);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(73, 17);
             this.lblUsername.TabIndex = 3;
@@ -78,7 +78,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(94, 294);
+            this.lblPassword.Location = new System.Drawing.Point(60, 294);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(69, 17);
             this.lblPassword.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(145, 218);
+            this.lblTitle.Location = new System.Drawing.Point(111, 218);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(174, 25);
             this.lblTitle.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             // btnNewUser
             // 
-            this.btnNewUser.Location = new System.Drawing.Point(169, 348);
+            this.btnNewUser.Location = new System.Drawing.Point(135, 348);
             this.btnNewUser.Name = "btnNewUser";
             this.btnNewUser.Size = new System.Drawing.Size(125, 23);
             this.btnNewUser.TabIndex = 6;
@@ -106,18 +106,19 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(169, 377);
+            this.btnExit.Location = new System.Drawing.Point(135, 377);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(125, 23);
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(135, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(97, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(201, 203);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -128,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 450);
+            this.ClientSize = new System.Drawing.Size(398, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnNewUser);
@@ -138,9 +139,12 @@
             this.Controls.Add(this.txtPasswordLogin);
             this.Controls.Add(this.txtUsernameLogin);
             this.Controls.Add(this.btnLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.Text = "Welcome to Idea Text Editor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

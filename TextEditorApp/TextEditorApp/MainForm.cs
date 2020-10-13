@@ -13,17 +13,17 @@ namespace TextEditorApp
     public partial class Idea : Form
     {
         private Operation operation;
-        public Idea(String userType, String username)
+        public Idea(User user)
         {
             InitializeComponent();
             operation = new Operation(rtbMainEditor);
-            if(userType.ToUpper() == "EDIT")
+            if(user.UserType.ToUpper() == "EDIT")
             {
-                tsLblUsername.Text = "Username: " + username + " (can edit)";
+                tsLblUsername.Text = "Username: " + user.Username + " (can edit)";
             }
             else
             {
-                tsLblUsername.Text = "Username: " + username + " (view only)";
+                tsLblUsername.Text = "Username: " + user.Username + " (view only)";
                 tsbBtnSave.Enabled = false;
                 stBtnSaveAs.Enabled = false;
                 tsBtnNewFile.Enabled = false;
@@ -161,6 +161,18 @@ namespace TextEditorApp
         private void toolStripButton8_Click(object sender, EventArgs e)
         {
             // Tool Tip
+        }
+
+        private void tsMenuItemAbout_Click(object sender, EventArgs e)
+        {
+            Form1 about = new Form1();
+            about.Show();
+        }
+
+        private void Idea_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
         }
     }
 }

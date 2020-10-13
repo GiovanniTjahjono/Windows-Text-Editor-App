@@ -8,75 +8,75 @@ using System.Threading.Tasks;
 
 namespace TextEditorApp
 {
-    class Authentication
+    class Users
     {
-        private Hashtable user = new Hashtable();
-        public Hashtable User { get => user; set => user = value; }
+        private IDictionary userPool = new Dictionary<string, User>();
 
-        public Authentication()
+        public IDictionary UserPool { get => userPool; set => userPool = value; }
+
+        public Users()
         {
             ReadFile();
         }
+
         public void ReadFile()
         {
             try
             {
-                StreamReader userPool = new StreamReader("../../User Pool Data/login.txt");
-                String data = userPool.ReadLine();
+                StreamReader loginFile = new StreamReader("../../User Pool Data/login.txt");
+                string data = loginFile.ReadLine();
                 while (data != null)
                 {
                     string[] dataRow = data.Split(',');
-                    User.Add(dataRow[0], new User(dataRow[0], dataRow[1], dataRow[3], dataRow[4], dataRow[2], DateTime.ParseExact(dataRow[5], "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture)));
-                    data = userPool.ReadLine();
+                    UserPool.Add(dataRow[0], new User(dataRow[0], dataRow[1], dataRow[3], dataRow[4], dataRow[2], DateTime.ParseExact(dataRow[5], "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture)));
+                    data = loginFile.ReadLine();
                 }
-                userPool.Close();
+                loginFile.Close();
             }
             catch (IOException e)
             {
                 Console.WriteLine(e.Message);
             }
         }
-        public string[] Login(string username, string password)
+
+        public User Login(string username, string password)
         {
-            string isMatch = "FALSE";
-            string userType = "";
-            foreach (string key in User.Keys)
+            User validUser = new User();
+            foreach (string key in UserPool.Keys)
             {
                 if (key == username)
                 {
-                    User user = (User)User[key];
-                    
+                    User user = (User)UserPool[key];
+
                     if (password == user.Password)
                     {
-                        userType = user.UserType;
-                        isMatch = "TRUE";
+                        validUser = user;
                     }
                 }
             }
-            string[] result = {isMatch.ToString(), userType, username};
-            return result;
+            return validUser; 
         }
         public string createNewUser(User user)
         {
             bool isValid = true;
             string message = "";
-            foreach(string key in User.Keys)
+            foreach (string key in UserPool.Keys)
             {
-                if(key == user.Username)
+                if (key == user.Username)
                 {
                     isValid = false;
                     message = "1";
                 }
             }
-            if(isValid)
+            if (isValid)
             {
-                User.Add(user.Username, user);
+                UserPool.Add(user.Username, user);
                 try
                 {
                     string userPoolDataTemp = "";
-                    foreach (string key in User.Keys)
+                    foreach (string key in UserPool.Keys)
                     {
-                        User eachUser = (User)User[key];
+                        User eachUser = (User)UserPool[key];
                         userPoolDataTemp += eachUser.Username + "," +
                                             eachUser.Password + "," +
                                             eachUser.UserType + "," +
@@ -92,7 +92,7 @@ namespace TextEditorApp
                     message = e.Message;
                 }
             }
-           
+
             return message;
         }
     }

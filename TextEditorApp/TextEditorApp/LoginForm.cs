@@ -35,21 +35,30 @@ namespace TextEditorApp
             }
             else
             {
-                Authentication auth = new Authentication();
-                string[] result = auth.Login(username, password);
-                if (result[0].ToUpper() == "TRUE")
+                Users user = new Users();
+                User validUser = user.Login(username, password);
+                if (validUser.Username != null)
                 {
-                    Idea mainForm = new Idea(result[1], result[2]);
+                    Idea mainForm = new Idea(validUser);
                     mainForm.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Gagal");
+                    MessageBox.Show("Combination or your username and password is wrong", "Credential is not valid", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
-            
-            
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Close();
         }
     }
 }
